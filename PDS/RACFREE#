@@ -1,0 +1,17 @@
+RACFREE
+
+RACFREE is an APF-authorised TSO command. It can be used to free
+all the RACF dataset profiles associated with a TSO address
+space. This means that any changes made to the profiles used by
+the address space can be actioned without destroying the address
+space and without affecting all other address spaces, as would be
+needed if a SETROPTS command was used. The RACF command LISTDSD
+can be used to perform this action for data set profiles. RACFREE
+will work for all other classes of profile.
+
+   FUNCTION : Free RACLISTed profiles and GENERIC profiles
+              from address space ACEE
+
+   Command Description:
+      RACFREE  GENERIC/RACLIST/ALL
+

@@ -1,0 +1,14 @@
+CSFXFER
+
+CSFXFER is a REXX program which is used to move DES encryption
+keys from one site to another. The original use case for this
+program was a company that was divesting itself of part of its
+business. The divested business set up a new computer system and
+moved the data and programs into it. The original company
+supplied data but would not pass anything over which was not part
+of the divested business. When it came to encryption keys we
+needed to agree a process to extract encryption keys from one
+ICSF system and install them in another. CSFXFER provides a means
+to handle this situation. It uses a common transport key which is
+used to export operational keys from one ICSF keystore and them
+import them into a subsequent keystore.

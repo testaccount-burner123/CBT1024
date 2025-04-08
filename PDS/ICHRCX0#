@@ -1,0 +1,26 @@
+ICHRCX02 for Erase On Scratch
+
+This version of the RACF checking post-processing exit ICHRCX02
+can be used to implement selective erasure of temporary data
+sets.
+
+On a standard RACF system the option to erase data sets when they
+are scratched (or space is partially released) is available with
+various controls. Data sets can be erased or not erased using
+slective flags in each RACF generic profile. However, the only
+way to ensure that temporary data sets are erased is to set your
+system so that ALL data sets are erased on scratch. Many shops
+are reluctant to use such a setting. More granularity is
+required.
+
+When dealing with applications which are to used encrypted data
+sets, there are issues with temporary data set which are not
+capable of encryption. This is especially relevant to the SORT
+program which uses work areas that are not encrypted and that
+SORT insists are temporary data sets.
+
+One way to at least partially resolve this is to use this version
+of the RACF ICHRCX02 exit to selectively request data set
+erasure. I normally recommend this exit is used in conjunction
+with the setting, SETROPTS CLASSACT(TEMPDSN)
+

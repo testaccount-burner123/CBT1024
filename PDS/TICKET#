@@ -1,0 +1,21 @@
+TICKET
+
+TICKET is used to associate a local change identifer with RACF
+commands.
+
+When RACF change requests are made they are frequently made via a
+local change request system. Usually multiple commands are needed
+to fulfil a single request. However, it is often difficult to
+determine which RACF commands were used to fulfill a given
+request. SMF records are written for each RACF command, yet they
+have nothing within them to identify the change request. RACF
+commands have no way to associate such a change identifier with
+the command such that the SMF record for the command is tagged
+with the identifer. Ticket provides a way to resolve this issue.
+
+The TICKET command is supplied with a very small program called
+TKTU834. This is to be installed at SMF exit point IEFU83 and
+IEFU84. This can be installed dynamically if required. TKTU834 is
+required for Ticket to work.
+
+TICKET is an APF-authorised TSO command.

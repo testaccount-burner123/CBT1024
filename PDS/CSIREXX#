@@ -1,0 +1,16 @@
+CSIREXX
+
+CSIREXX can be used to extract information from the system
+catalogs using the standard interface IGGCSI00. CSIREXX uses a
+method similar to the RACF extract program IRRXUTIL. Each value
+from a catalog is placed into a separate REXX variable.
+
+CSIREXX can be used to search the catalog using the default
+generic search/locate functions and can extract almost all
+information needed for the redefinition of data sets or VSAM
+clusters.
+
+CSIREXX is a very powerful program that can be used to report on
+data set and cluster details and can be used to build JCL and
+IDCAMS statements to redefine data sets and clusters.
+

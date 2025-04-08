@@ -1,0 +1,11 @@
+REXXENQ0
+
+REXXENQ0 can be used within a REXX routine to invoke another REXX
+routine, but while the second routine is executing a systems wide
+ENQ is held. This enables serialised access to a single object
+which might normally be updated by multiple users across a
+sysplex. Typically this resource would be a data set. Thus
+corruptions to that data set due to concurrent updates can be
+avoided. In addition, the REXX routine invoked can control the
+nature of those updates.
+

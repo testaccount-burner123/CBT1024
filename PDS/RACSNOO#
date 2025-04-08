@@ -1,0 +1,12 @@
+RACF Snoop
+
+RACF Snoop is an ISPF application which enables the user to
+examine the RACF environment for multiple address spaces. It is
+possible see what RACF user ids are in use, current connect
+group, various attributes and the programs being executed. RACF
+Snoop requires two APF-authorised TSO commands to work. These
+will need to be installed into a linklist library.
+
+Included in this package is a manual for RACF Snoop and an older
+document explaining details of how RACF generic profiles are
+handled in storage and how to avoid some pitfalls.

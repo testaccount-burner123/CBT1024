@@ -1,0 +1,27 @@
+CONCAT
+
+CONCAT is a TSO command. It is used to dynamically concatenate a
+data set with an existing DDname. The new data set can be added
+before or after the existing set. Duplicate data set names can be
+added. It can also delete a data set from within an existing
+concatenated set. If the data set to be added is not catalogued
+then a volume and unit can be supplied. The search for the data
+set can start from the top or bottom of the concatenated set.
+CONCAT can also be used to test for the existence of a data set
+within the concatenation. CONCAT runs without APF authorisation
+and is very suitable for dynamically manipulating concatenated
+data sets for use with ISPF.
+
+    COMMAND DESCRIPTION:
+       CONCAT ALLOCATE/FREE/TEST
+              FILE(FILE)
+              DATASET(DATASET)
+              SHR/OLD
+              TOP/BOTTOM/ALL
+              DUPLICATE/NODUPLICATE
+              VOLUME(VOLSER)
+              UNIT(DEVICETYPE)
+
+   DEFAULTS
+          FILE SHR TOP NODUPLICATE
+

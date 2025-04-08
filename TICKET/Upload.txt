@@ -1,0 +1,57 @@
+The file tkt.cntl.xmi should be transferred to your z/OS system in BINARY mode using a target data set which is an 80-byte record length flat file. Blksize=0 can be used.
+
+The following sequence might be used from a Windows platform using FTP
+
+
+CD (folder where the TICKET files are stored)
+FTP <IP address of your z/OS system>
+
+    (userid and password prompts)
+
+BIN
+QUOTE SITE LRECL=80 BLKSIZE=0 RECFM=FB PRI=4 SEC=1 TRACKS
+PUT TKT.CNTL.XMI
+
+
+
+Once it is stored on your z/OS system (assumed to be under a high level qualifier of your userid) issue the following command,
+
+RECEIVE INDA(TKT.CNTL.XMI)
+
+This will produce the following prompts,
+
+INMR901I Dataset LENNIE.TKT.CNTL from LENNIE on NODENAME 
+INMR906A Enter restore parameters or 'DELETE' or 'END' + 
+
+Just press enter at this point and you should receive the following messages showing the target dataset has been created,
+
+                                                                                                                          
+                                         IEBCOPY MESSAGES AND CONTROL STATEMENTS                              PAGE     1  
+IEB1135I IEBCOPY  FMID HDZ1D10  SERVICE LEVEL UA69216  DATED 20130522 DFSMS 01.13.00 z/OS    01.13.00 HBB7780  CPU 2827 
+IEB1035I LENNIE   SYSUSER  SYSUSER  13:28:23 FRI 14 MAR 2014 PARM='WORK=4M,SIZE=1M'                                     
+ COPY INDD=((SYS00150,R)),OUTDD=SYS00149                                                                                
+IEB1013I COPYING FROM PDSU  INDD=SYS00150 VOL=TEC001 DSN=SYS14073.T132823.RA000.LENNIE.R0108187                         
+IEB1014I           TO PDS  OUTDD=SYS00149 VOL=Z00U01 DSN=uuuuuuu.TKT.CNTL                                                
+IEB167I FOLLOWING MEMBER(S) LOADED FROM INPUT DATA SET REFERENCED BY SYS00150                                           
+IEB154I ##README HAS BEEN SUCCESSFULLY LOADED                                                                           
+IEB154I #ASM     HAS BEEN SUCCESSFULLY LOADED                                                                           
+IEB154I ASSEMBLE HAS BEEN SUCCESSFULLY LOADED                                                                           
+IEB154I TICKET   HAS BEEN SUCCESSFULLY LOADED                                                                           
+IEB154I TKTA     HAS BEEN SUCCESSFULLY LOADED                                                                           
+IEB154I TKTU834  HAS BEEN SUCCESSFULLY LOADED                                                                           
+IEB1098I 6 OF 6 MEMBERS LOADED FROM INPUT DATA SET REFERENCED BY SYS00150                                               
+IEB144I THERE ARE 1 UNUSED TRACKS IN OUTPUT DATA SET REFERENCED BY SYS00149                                             
+IEB149I THERE ARE 5 UNUSED DIRECTORY BLOCKS IN OUTPUT DIRECTORY                                                         
+IEB147I END OF JOB - 0 WAS HIGHEST SEVERITY CODE                                                                        
+INMR001I Restore successful to dataset 'uuuuuuu.TKT.CNTL'                                                                
+***                                                                     
+
+where uuuuuuu is your userid.
+
+At this point the install instructions are all in,
+
+uuuuuuu.TKT.CNTL(##README)
+
+Lennie Dymoke-Bradshaw, IBM
+14 March 2014
+                                                

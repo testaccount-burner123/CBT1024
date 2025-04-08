@@ -1,0 +1,44 @@
+Programs and code
+
+Over many years I have written hundreds of thousands of lines of
+code. Most of this was for clients and employers, including IBM.
+(I was part of the project that wrote the first z/OS
+healthchecker, and also worked for a short while on zSecure
+development.) I think a lot of code I wrote is still in use.
+
+The following programs and code are examples of which may be of
+use to you. All of these programs are supplied without absolute
+guarantees ??. But they can be used entirely at your discretion.
+
+CONCAT      TSO command for dynamic concatenation.
+RACFREE     TSO command to free in-storage RACF resources.
+TICKET      TSO command to tag RACF SMF records with change id.
+ICHRCX02    for Erase On Scratch   Exit to selectively erase
+            temporary data sets.
+CSIREXX     REXX interface to read detailed catalog information.
+CSFXFER     REXX routines to move a key from one CKDS to another CKDS.
+REXXENQ0    Program to invoke a REXX routine while holding a global ENQ.
+RACF Snoop  TSO commands and ISPF application to examine RACF
+            security for multiple address spaces
+
+Please contact me if,
+  you find problems or bugs in the code,
+  you need further information about them,
+  you make any enhancements to the code or fix problems yourself.
+  I would also appreciate the opportunity to incorporate your
+  enhancements and/or fixes.
+
+Before providing you access to the code, the links below ask you
+to provide me a couple of contact details. Then I can contact you
+if new versions or bug fixes become available or if I have new
+programs available here.
+
+If you wish, please use the 'Contact Me' page to comment on these
+programs.
+
+Final note: Many of these packages use files in XMIT format.
+These files can be viewed on a Windows PC using various software
+packages. I like the V file viewer. I have no connection with the
+makers of this software except that I find the software really
+useful and not expensive.
+
